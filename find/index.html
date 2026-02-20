@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lær at opdage skimmelsvamp – tegn, symptomer og testmetoder. Vejledning fra Bolius og Teknologisk Institut om aftryksplader, Mycometer, luftmåling og DNA-test.">
+  <title>Find skimmelsvamp – Skimmelfri.dk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/cookies.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Gå til indhold</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+          <div class="site-logo__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="site-logo__text">
+            <span class="site-logo__name">skimmelfri.dk</span>
+            <span class="site-logo__tagline">Sundt indeklima</span>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Primær navigation">
+          <ul class="site-nav__list" role="list">
+            <li><a href="/forebyg/" class="site-nav__link">Forebyg</a></li>
+            <li><a href="/find/" class="site-nav__link is-active" aria-current="page">Find skimmel</a></li>
+            <li><a href="/fjern/" class="site-nav__link">Fjern skimmel</a></li>
+            <li><a href="/ressourcer/" class="site-nav__link">Ressourcer</a></li>
+            <li><a href="/produkter/" class="site-nav__link">Produkter</a></li>
+            <li><a href="/om/" class="site-nav__link">Om siden</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__actions">
+          <button class="btn-search" id="searchToggle" aria-label="Åbn søgning" aria-expanded="false" aria-controls="searchOverlay">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="btn-menu" id="menuToggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobileNav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigation" aria-hidden="true">
+      <ul class="mobile-nav__list" role="list">
+        <li><a href="/forebyg/" class="mobile-nav__link">Forebyg skimmelsvamp</a></li>
+        <li><a href="/find/" class="mobile-nav__link is-active">Find skimmelsvamp</a></li>
+        <li><a href="/fjern/" class="mobile-nav__link">Fjern skimmelsvamp</a></li>
+        <li><a href="/ressourcer/" class="mobile-nav__link">Ressourcer</a></li>
+        <li><a href="/produkter/" class="mobile-nav__link">Produkter</a></li>
+        <li><a href="/om/" class="mobile-nav__link">Om siden</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Søgning" aria-hidden="true">
+    <div class="search-box">
+      <div class="search-box__input-wrap">
+        <span class="search-box__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <input type="search" class="search-box__input" id="searchInput" placeholder="Søg på skimmelfri.dk…" autocomplete="off" aria-label="Søg på siden">
+        <button class="search-box__close" id="searchClose" aria-label="Luk søgning">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="search-box__results" id="searchResults" role="region" aria-live="polite">
+        <p class="search-box__hint">Skriv for at søge efter artikler og emner</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container" style="padding-top: var(--space-2);">
+      <ol class="breadcrumb" aria-label="Brødkrumme">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Forside</a></li>
+        <li class="breadcrumb__item"><span class="breadcrumb__current">Find skimmelsvamp</span></li>
+      </ol>
+    </div>
+
+    <section class="page-hero" aria-labelledby="pageTitle">
+      <div class="container">
+        <p class="page-hero__label" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Opdagelse
+        </p>
+        <h1 class="page-hero__title" id="pageTitle">Find skimmelsvamp</h1>
+        <p class="page-hero__description">
+          Kend tegnene på skimmelsvamp og lær, hvilke testmetoder der findes.
+          Vejledning baseret på Bolius, Teknologisk Institut og andre uvildige eksperter.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="article-layout">
+          <div>
+
+            <div class="callout callout--warning" style="margin-bottom: var(--space-8);">
+              <span class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <div class="callout__content">
+                <p class="callout__title">Oplever du symptomer uden synlige tegn?</p>
+                <p>Skjult skimmelsvamp bag gulve, vægge og lofter kan give luftvejsgener og træthed uden synlige tegn. Kontakt en fagperson, hvis du mistænker skjult skimmel.</p>
+              </div>
+            </div>
+
+            <!-- Articles grid -->
+            <div class="grid grid--2" style="margin-bottom: var(--space-10);">
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag tag--primary" style="margin-bottom: var(--space-3);">Grundlæggende</span>
+                  <h2 class="card__title">Tegn på skimmelsvamp</h2>
+                  <p class="card__description">
+                    Muglugt, misfarvede pletter og kondens på vinduer er typiske tegn. Lær, hvor skimmelsvamp typisk optræder – og hvornår du bør handle.
+                  </p>
+                  <a href="/find/tegn/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Sundhed</span>
+                  <h2 class="card__title">Helbredssymptomer</h2>
+                  <p class="card__description">
+                    Skimmelsvamp kan give luftvejsgener, hovedpine og træthed. Særligt følsomme er personer med astma og høfeber.
+                  </p>
+                  <a href="/find/helbredssymptomer/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Test</span>
+                  <h2 class="card__title">Testmetoder – oversigt</h2>
+                  <p class="card__description">
+                    Aftryksplader, Mycometer, luftmåling og DNA-test: fordele og ulemper ved de fire primære metoder til at påvise skimmelsvamp.
+                  </p>
+                  <a href="/find/testmetoder/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Skjult skimmel</span>
+                  <h2 class="card__title">Skjult skimmelsvamp</h2>
+                  <p class="card__description">
+                    Skimmelsvamp kan skjule sig bag efterisolering og under gulve. Teknologisk Institut advarer om, at skjult skimmel kan påvirke helbredet.
+                  </p>
+                  <a href="/find/skjult-skimmel/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Test methods overview table-style -->
+            <h2 style="font-size: var(--text-xl); font-weight: var(--font-weight-semi); margin-bottom: var(--space-6);">Oversigt: Testmetoder til skimmelsvamp</h2>
+            <p class="text-muted" style="margin-bottom: var(--space-6); font-size: var(--text-sm);">
+              Kilde: Videncentret Bolius og Teknologisk Institut. En kombination af to metoder giver oftest det bedste billede.
+            </p>
+
+            <div class="grid grid--2" style="gap: var(--space-4);">
+              <div style="padding: var(--space-5); background: var(--color-bg-subtle); border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                <h3 style="font-size: var(--text-base); font-weight: var(--font-weight-semi); margin-bottom: var(--space-2);">Aftryksplader</h3>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Plade trykkes mod overflade og sendes til laboratorium. Kan bestemme svampetypen.</p>
+                <p style="font-size: var(--text-xs); color: var(--color-text-subtle);">Svartid: 4–6 dage</p>
+              </div>
+              <div style="padding: var(--space-5); background: var(--color-bg-subtle); border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                <h3 style="font-size: var(--text-base); font-weight: var(--font-weight-semi); margin-bottom: var(--space-2);">Mycometer-test</h3>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Vatpind stryges over overflade og analyseres for enzymer. God til efterkontrol.</p>
+                <p style="font-size: var(--text-xs); color: var(--color-text-subtle);">Svartid: Få timer</p>
+              </div>
+              <div style="padding: var(--space-5); background: var(--color-bg-subtle); border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                <h3 style="font-size: var(--text-base); font-weight: var(--font-weight-semi); margin-bottom: var(--space-2);">Luftmåling</h3>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Sporer opsamles via luftgennemstrømning. Skal suppleres med udendørs kontrol.</p>
+                <p style="font-size: var(--text-xs); color: var(--color-text-subtle);">Svartid: 4–6 dage</p>
+              </div>
+              <div style="padding: var(--space-5); background: var(--color-bg-subtle); border: 1px solid var(--color-border-light); border-radius: var(--radius-md);">
+                <h3 style="font-size: var(--text-base); font-weight: var(--font-weight-semi); margin-bottom: var(--space-2);">DNA-test</h3>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3);">Støv analyseres for skimmel-DNA. Støvet skal være mindst 3 uger gammelt.</p>
+                <p style="font-size: var(--text-xs); color: var(--color-text-subtle);">Svartid: 6–8 timer</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="article-sidebar" aria-label="Relateret indhold">
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Artikler i denne sektion</p>
+              <nav aria-label="Find-navigation">
+                <ul class="sidebar-box__nav" role="list">
+                  <li><a href="/find/tegn/">Tegn på skimmelsvamp</a></li>
+                  <li><a href="/find/helbredssymptomer/">Helbredssymptomer</a></li>
+                  <li><a href="/find/testmetoder/">Testmetoder – oversigt</a></li>
+                  <li><a href="/find/skjult-skimmel/">Skjult skimmelsvamp</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Næste skridt</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+                <li><a href="/forebyg/">Forebyg fremover</a></li>
+              </ul>
+            </div>
+            <div class="callout callout--info" style="font-size: var(--text-sm);">
+              <span class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+              <div class="callout__content">
+                <p class="callout__title">Brug uvildige testfirmaer</p>
+                <p>Testene bør udføres af uvildige firmaer. Kontakt evt. din boligforening eller kommunen for anbefalinger.</p>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+            <div class="site-logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <div class="site-logo__text"><span class="site-logo__name">skimmelfri.dk</span><span class="site-logo__tagline">Sundt indeklima</span></div>
+          </a>
+          <p>Uvildig, non-profit information om skimmelsvamp og indeklima for danske boligejere og lejere.</p>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Navigation</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/forebyg/">Forebyg skimmelsvamp</a></li>
+            <li><a href="/find/">Find skimmelsvamp</a></li>
+            <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+            <li><a href="/ressourcer/">Ressourcer</a></li>
+            <li><a href="/produkter/">Produkter</a></li>
+            <li><a href="/om/">Om siden</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Juridisk</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/privatlivspolitik/">Privatlivspolitik</a></li>
+            <li><a href="/privatlivspolitik/#cookies">Cookiepolitik</a></li>
+            <li><button class="site-footer__cookie-link" id="openCookieSettings" type="button">Cookie-indstillinger</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; <span id="currentYear">2026</span> skimmelfri.dk &mdash; Non-profit, uvildig information. <a href="/privatlivspolitik/">Privatlivspolitik</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-samtykke" aria-hidden="true">
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__text">
+          <p class="cookie-banner__title">Vi respekterer dit privatliv</p>
+          <p class="cookie-banner__description">Denne side bruger udelukkende teknisk nødvendige cookies. <a href="/privatlivspolitik/#cookies">Læs cookiepolitik</a>.</p>
+        </div>
+        <div class="cookie-banner__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookieSettingsBtn" type="button">Tilpas</button>
+          <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieRejectBtn" type="button">Kun nødvendige</button>
+          <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAcceptBtn" type="button">Acceptér alle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cookie-modal-overlay" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-modal">
+      <div class="cookie-modal__header">
+        <h2 class="cookie-modal__title" id="cookieModalTitle">Cookie-indstillinger</h2>
+        <button class="cookie-modal__close" id="cookieModalClose" aria-label="Luk"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="cookie-modal__body">
+        <p class="cookie-modal__intro">Vælg hvilke cookies du accepterer. <a href="/privatlivspolitik/#cookies" target="_blank" rel="noopener">Læs cookiepolitik</a>.</p>
+        <div class="cookie-category">
+          <div class="cookie-category__info"><p class="cookie-category__name">Nødvendige cookies <span class="cookie-category__required">Altid aktiv</span></p><p class="cookie-category__description">Teknisk nødvendige cookies.</p></div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" checked disabled><span class="toggle__slider"></span></label>
+        </div>
+        <div class="cookie-category">
+          <div class="cookie-category__info"><p class="cookie-category__name">Statistik</p><p class="cookie-category__description">Anonymiserede besøgsstatistikker.</p></div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" id="statsConsent" name="statsConsent"><span class="toggle__slider"></span></label>
+        </div>
+        <div class="cookie-category">
+          <div class="cookie-category__info"><p class="cookie-category__name">Markedsføring</p><p class="cookie-category__description">Ikke tilgængeligt – non-profit side.</p></div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" disabled><span class="toggle__slider"></span></label>
+        </div>
+      </div>
+      <div class="cookie-modal__footer">
+        <button class="cookie-modal__btn cookie-modal__btn--reject-all" id="modalRejectAll" type="button">Kun nødvendige</button>
+        <button class="cookie-modal__btn cookie-modal__btn--save" id="modalSavePrefs" type="button">Gem valg</button>
+        <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="modalAcceptAll" type="button">Acceptér alle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/cookies.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

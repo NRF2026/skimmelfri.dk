@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Om skimmelfri.dk – en non-profit, uvildig informationsside om skimmelsvamp og indeklima skabt af en dansk familiefar.">
+  <title>Om siden – Skimmelfri.dk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/cookies.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Gå til indhold</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+          <div class="site-logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="site-logo__text"><span class="site-logo__name">skimmelfri.dk</span><span class="site-logo__tagline">Sundt indeklima</span></div>
+        </a>
+        <nav class="site-nav" aria-label="Primær navigation">
+          <ul class="site-nav__list" role="list">
+            <li><a href="/forebyg/" class="site-nav__link">Forebyg</a></li>
+            <li><a href="/find/" class="site-nav__link">Find skimmel</a></li>
+            <li><a href="/fjern/" class="site-nav__link">Fjern skimmel</a></li>
+            <li><a href="/ressourcer/" class="site-nav__link">Ressourcer</a></li>
+            <li><a href="/produkter/" class="site-nav__link">Produkter</a></li>
+            <li><a href="/om/" class="site-nav__link is-active" aria-current="page">Om siden</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__actions">
+          <button class="btn-search" id="searchToggle" aria-label="Åbn søgning" aria-expanded="false" aria-controls="searchOverlay"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          <button class="btn-menu" id="menuToggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobileNav"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigation" aria-hidden="true">
+      <ul class="mobile-nav__list" role="list">
+        <li><a href="/forebyg/" class="mobile-nav__link">Forebyg skimmelsvamp</a></li>
+        <li><a href="/find/" class="mobile-nav__link">Find skimmelsvamp</a></li>
+        <li><a href="/fjern/" class="mobile-nav__link">Fjern skimmelsvamp</a></li>
+        <li><a href="/ressourcer/" class="mobile-nav__link">Ressourcer</a></li>
+        <li><a href="/produkter/" class="mobile-nav__link">Produkter</a></li>
+        <li><a href="/om/" class="mobile-nav__link is-active">Om siden</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Søgning" aria-hidden="true">
+    <div class="search-box">
+      <div class="search-box__input-wrap">
+        <span class="search-box__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <input type="search" class="search-box__input" id="searchInput" placeholder="Søg på skimmelfri.dk…" autocomplete="off" aria-label="Søg på siden">
+        <button class="search-box__close" id="searchClose" aria-label="Luk søgning"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="search-box__results" id="searchResults" role="region" aria-live="polite"><p class="search-box__hint">Skriv for at søge efter artikler og emner</p></div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <div class="container" style="padding-top: var(--space-2);">
+      <ol class="breadcrumb" aria-label="Brødkrumme">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Forside</a></li>
+        <li class="breadcrumb__item"><span class="breadcrumb__current">Om siden</span></li>
+      </ol>
+    </div>
+
+    <section class="page-hero" aria-labelledby="pageTitle">
+      <div class="container">
+        <p class="page-hero__label" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+          Bag om siden
+        </p>
+        <h1 class="page-hero__title" id="pageTitle">Om skimmelfri.dk</h1>
+        <p class="page-hero__description">
+          En non-profit, uvildig informationsside om skimmelsvamp og indeklima – skabt af en dansk familiefar med egne erfaringer.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="article-layout">
+          <div>
+            <div class="prose">
+
+              <h2>Min historie</h2>
+              <p>
+                Mit navn er Morten, og jeg er en helt almindelig dansk familiefar med kone og to børn. Vi bor i et ældre parcelhus, og for et par år siden opdagede vi skimmelsvamp i vores soveværelse. Det var bag møblerne op ad ydervæggen – et klassisk problem i mange danske boliger.
+              </p>
+              <p>
+                Det var bekymrende. Jeg kastede mig over nettet og forsøgte at finde pålidelig information, men stødte hurtigt på et virvar af sider, der enten forsøgte at sælge produkter, var sponsoreret af rengøringsfirmaer, eller blot gav modsatrettede råd. Det var frustrerende.
+              </p>
+              <p>
+                Jeg besluttede at gå kilden direkte: Sundhedsstyrelsen, Videncentret Bolius, Skimmel.dk, forskere fra Aalborg Universitet og andre uvildige eksperter. Gennem måneder samlede jeg al den viden, der faktisk holdt, og det hjalp os med at løse problemet og forebygge fremover.
+              </p>
+              <p>
+                Resultatet er denne side. Alt indhold bygger på dokumenteret, uvildig viden – og jeg opdaterer løbende, efterhånden som ny forskning eller officielle anbefalinger udkommer.
+              </p>
+
+              <h2>Formålet med siden</h2>
+              <p>
+                Skimmelfri.dk er skabt for at give andre familier et enkelt sted med pålidelig, ikke-kommerciel information om:
+              </p>
+              <ul>
+                <li>Forebyggelse af skimmelsvamp gennem sunde boligvaner</li>
+                <li>Opdagelse – tegn, symptomer og testmetoder</li>
+                <li>Fjernelse – hvad du kan klare selv, og hvornår du skal have professionel hjælp</li>
+                <li>Links til troværdige, uvildige ressourcer</li>
+              </ul>
+
+              <h2>Kildegrundlag</h2>
+              <p>
+                Alt indhold på denne side er baseret på viden fra anerkendte, uafhængige danske og nordiske kilder:
+              </p>
+              <ul>
+                <li><strong>Sundhedsstyrelsen</strong> – officielle anbefalinger om indeklima</li>
+                <li><strong>Videncentret Bolius</strong> – uvildig boligrådgivning</li>
+                <li><strong>Skimmel.dk</strong> – officiel portal drevet af Landsbyggefonden, GI og BUILD</li>
+                <li><strong>Center for Indeklima og Sundhed i Boliger (Cisbo)</strong> – forskning fra Aalborg Universitet/BUILD/NFA</li>
+                <li><strong>Teknologisk Institut</strong> – faglig analyse og vejledning</li>
+                <li><strong>Danvak/BUILD</strong> – ventilation og indeklimaekspertise</li>
+                <li><strong>Byggesagkyndig.nu</strong> – praktisk rådgivning om sanering</li>
+              </ul>
+              <p>
+                Når en artikel bygger på en specifik kilde, er det angivet direkte i teksten.
+              </p>
+
+              <h2>Hvad siden ikke er</h2>
+              <ul>
+                <li>Vi viser ingen reklamer</li>
+                <li>Vi har ingen affiliate-links (du betaler ikke mere, hvis du klikker videre)</li>
+                <li>Vi modtager ingen betaling fra producenter, rengøringsfirmaer eller rådgivere</li>
+                <li>Vi er ikke tilknyttet nogen virksomhed eller organisation</li>
+                <li>Vi indsamler ikke persondata ud over de cookies, du eventuelt giver samtykke til</li>
+              </ul>
+
+              <h2>Ansvarsfraskrivelse</h2>
+              <p>
+                Indholdet på skimmelfri.dk er udelukkende til informationsformål og kan ikke erstatte professionel rådgivning. Ved tvivl om din boligs tilstand bør du kontakte en byggesagkyndig eller anden fagperson. Siden påtager sig ikke ansvar for eventuelle fejl, udeladelser eller konsekvenser af at følge rådene på siden.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="article-sidebar" aria-label="Yderligere information">
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Hurtige facts</p>
+              <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-4);">
+                <li style="font-size: var(--text-sm);">
+                  <strong style="display: block; color: var(--color-text);">Non-profit</strong>
+                  <span style="color: var(--color-text-muted);">Ingen reklamer, ingen kommercielle interesser</span>
+                </li>
+                <li style="font-size: var(--text-sm);">
+                  <strong style="display: block; color: var(--color-text);">Uvildig</strong>
+                  <span style="color: var(--color-text-muted);">Ingen tilknytning til producenter eller firmaer</span>
+                </li>
+                <li style="font-size: var(--text-sm);">
+                  <strong style="display: block; color: var(--color-text);">Dokumenteret</strong>
+                  <span style="color: var(--color-text-muted);">Alt indhold baseret på anerkendte danske kilder</span>
+                </li>
+                <li style="font-size: var(--text-sm);">
+                  <strong style="display: block; color: var(--color-text);">GDPR-kompatibel</strong>
+                  <span style="color: var(--color-text-muted);">Vi indsamler minimalt med data og aldrig uden samtykke</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Navigér videre</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="/ressourcer/">Se alle kilder</a></li>
+                <li><a href="/privatlivspolitik/">Privatlivspolitik</a></li>
+                <li><a href="/privatlivspolitik/#cookies">Cookiepolitik</a></li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+            <div class="site-logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <div class="site-logo__text"><span class="site-logo__name">skimmelfri.dk</span><span class="site-logo__tagline">Sundt indeklima</span></div>
+          </a>
+          <p>Uvildig, non-profit information om skimmelsvamp og indeklima for danske boligejere og lejere.</p>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Navigation</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/forebyg/">Forebyg skimmelsvamp</a></li>
+            <li><a href="/find/">Find skimmelsvamp</a></li>
+            <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+            <li><a href="/ressourcer/">Ressourcer</a></li>
+            <li><a href="/produkter/">Produkter</a></li>
+            <li><a href="/om/">Om siden</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Juridisk</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/privatlivspolitik/">Privatlivspolitik</a></li>
+            <li><a href="/privatlivspolitik/#cookies">Cookiepolitik</a></li>
+            <li><button class="site-footer__cookie-link" id="openCookieSettings" type="button">Cookie-indstillinger</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; <span id="currentYear">2026</span> skimmelfri.dk &mdash; <a href="/privatlivspolitik/">Privatlivspolitik</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-samtykke" aria-hidden="true">
+    <div class="container"><div class="cookie-banner__inner">
+      <div class="cookie-banner__text"><p class="cookie-banner__title">Vi respekterer dit privatliv</p><p class="cookie-banner__description">Denne side bruger udelukkende teknisk nødvendige cookies. <a href="/privatlivspolitik/#cookies">Læs cookiepolitik</a>.</p></div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookieSettingsBtn" type="button">Tilpas</button>
+        <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieRejectBtn" type="button">Kun nødvendige</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAcceptBtn" type="button">Acceptér alle</button>
+      </div>
+    </div></div>
+  </div>
+  <div class="cookie-modal-overlay" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-modal">
+      <div class="cookie-modal__header"><h2 class="cookie-modal__title" id="cookieModalTitle">Cookie-indstillinger</h2><button class="cookie-modal__close" id="cookieModalClose" aria-label="Luk"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="cookie-modal__body">
+        <p class="cookie-modal__intro">Vælg hvilke cookies du accepterer. <a href="/privatlivspolitik/#cookies" target="_blank" rel="noopener">Læs cookiepolitik</a>.</p>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Nødvendige cookies <span class="cookie-category__required">Altid aktiv</span></p><p class="cookie-category__description">Teknisk nødvendige cookies.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" checked disabled><span class="toggle__slider"></span></label></div>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Statistik</p><p class="cookie-category__description">Anonymiserede besøgsstatistikker.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" id="statsConsent" name="statsConsent"><span class="toggle__slider"></span></label></div>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Markedsføring</p><p class="cookie-category__description">Ikke tilgængeligt – non-profit side.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" disabled><span class="toggle__slider"></span></label></div>
+      </div>
+      <div class="cookie-modal__footer">
+        <button class="cookie-modal__btn cookie-modal__btn--reject-all" id="modalRejectAll" type="button">Kun nødvendige</button>
+        <button class="cookie-modal__btn cookie-modal__btn--save" id="modalSavePrefs" type="button">Gem valg</button>
+        <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="modalAcceptAll" type="button">Acceptér alle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/cookies.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forebyg skimmelsvamp med råd om ventilation, opvarmning og sunde boligvaner baseret på Sundhedsstyrelsen og anerkendte danske eksperter.">
+  <title>Forebyg skimmelsvamp – Skimmelfri.dk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/cookies.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Gå til indhold</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+          <div class="site-logo__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="site-logo__text">
+            <span class="site-logo__name">skimmelfri.dk</span>
+            <span class="site-logo__tagline">Sundt indeklima</span>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Primær navigation">
+          <ul class="site-nav__list" role="list">
+            <li><a href="/forebyg/" class="site-nav__link is-active" aria-current="page">Forebyg</a></li>
+            <li><a href="/find/" class="site-nav__link">Find skimmel</a></li>
+            <li><a href="/fjern/" class="site-nav__link">Fjern skimmel</a></li>
+            <li><a href="/ressourcer/" class="site-nav__link">Ressourcer</a></li>
+            <li><a href="/produkter/" class="site-nav__link">Produkter</a></li>
+            <li><a href="/om/" class="site-nav__link">Om siden</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__actions">
+          <button class="btn-search" id="searchToggle" aria-label="Åbn søgning" aria-expanded="false" aria-controls="searchOverlay">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="btn-menu" id="menuToggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobileNav">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigation" aria-hidden="true">
+      <ul class="mobile-nav__list" role="list">
+        <li><a href="/forebyg/" class="mobile-nav__link is-active">Forebyg skimmelsvamp</a></li>
+        <li><a href="/find/" class="mobile-nav__link">Find skimmelsvamp</a></li>
+        <li><a href="/fjern/" class="mobile-nav__link">Fjern skimmelsvamp</a></li>
+        <li><a href="/ressourcer/" class="mobile-nav__link">Ressourcer</a></li>
+        <li><a href="/produkter/" class="mobile-nav__link">Produkter</a></li>
+        <li><a href="/om/" class="mobile-nav__link">Om siden</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Søgning" aria-hidden="true">
+    <div class="search-box">
+      <div class="search-box__input-wrap">
+        <span class="search-box__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <input type="search" class="search-box__input" id="searchInput" placeholder="Søg på skimmelfri.dk…" autocomplete="off" aria-label="Søg på siden">
+        <button class="search-box__close" id="searchClose" aria-label="Luk søgning">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="search-box__results" id="searchResults" role="region" aria-live="polite">
+        <p class="search-box__hint">Skriv for at søge efter artikler og emner</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- Breadcrumb -->
+    <div class="container" style="padding-top: var(--space-2);">
+      <ol class="breadcrumb" aria-label="Brødkrumme">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Forside</a></li>
+        <li class="breadcrumb__item"><span class="breadcrumb__current">Forebyg skimmelsvamp</span></li>
+      </ol>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero" aria-labelledby="pageTitle">
+      <div class="container">
+        <p class="page-hero__label" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Forebyggelse
+        </p>
+        <h1 class="page-hero__title" id="pageTitle">Forebyg skimmelsvamp</h1>
+        <p class="page-hero__description">
+          De bedste råd til at holde skimmelsvamp ude af dit hjem – baseret på anbefalinger fra
+          Sundhedsstyrelsen, professor Lars Gunnarsen og andre uvildige eksperter.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content area -->
+    <section class="section">
+      <div class="container">
+        <div class="article-layout">
+
+          <!-- Main content -->
+          <div>
+            <!-- Intro callout -->
+            <div class="callout callout--tip" style="margin-bottom: var(--space-8);">
+              <span class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <div class="callout__content">
+                <p class="callout__title">Forebyggelse er den bedste løsning</p>
+                <p>Skimmelsvamp trives, når luftfugtighed og temperatur er gunstige. Med de rette vaner kan du holde skimmel ude – og sikre et sundere hjem for hele familien.</p>
+              </div>
+            </div>
+
+            <!-- Articles grid -->
+            <div class="grid grid--2" style="margin-bottom: var(--space-10);">
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag tag--primary" style="margin-bottom: var(--space-3);">Grundlæggende</span>
+                  <h2 class="card__title">Hvad er skimmelsvamp?</h2>
+                  <p class="card__description">
+                    Skimmelsvamp er svampeorganismer, der vokser i fugtige omgivelser og kan give sundhedsproblemer for hele familien. Forstå betingelserne, og du kan forebygge dem.
+                  </p>
+                  <a href="/forebyg/hvad-er-skimmelsvamp/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag tag--primary" style="margin-bottom: var(--space-3);">Vigtig</span>
+                  <h2 class="card__title">Ventilation og udluftning</h2>
+                  <p class="card__description">
+                    Sundhedsstyrelsen anbefaler 5–10 minutters gennemtræk flere gange dagligt. Lær, hvordan du lufter ud korrekt og forebygger fugtopbygning.
+                  </p>
+                  <a href="/forebyg/ventilation/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Temperatur</span>
+                  <h2 class="card__title">Opvarmning og fugt</h2>
+                  <p class="card__description">
+                    Hold boligen opvarmet til mindst 18 °C i alle rum. Lær sammenhængen mellem temperatur, luftfugtighed og skimmelrisiko.
+                  </p>
+                  <a href="/forebyg/opvarmning-og-fugt/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Daglige vaner</span>
+                  <h2 class="card__title">Undgå fugtige aktiviteter</h2>
+                  <p class="card__description">
+                    Tør ikke tøj indendørs, tør altid op efter bad og madlavning, og brug emhætte konsekvent. Konkrete råd fra Skimmel.dk.
+                  </p>
+                  <a href="/forebyg/daglige-vaner/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Rengøring</span>
+                  <h2 class="card__title">Rengøring og indeklimavaner</h2>
+                  <p class="card__description">
+                    Ugentlig rengøring med miljømærkede midler og HEPA-støvsuger reducerer sporer og støv markant. Praktiske råd fra Sundhedsstyrelsen.
+                  </p>
+                  <a href="/forebyg/rengoering/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card__body">
+                  <span class="tag" style="margin-bottom: var(--space-3);">Fugt og forskning</span>
+                  <h2 class="card__title">Fugt og indeklima</h2>
+                  <p class="card__description">
+                    Forskningsresultater fra Cisbo (Aalborg Universitet/BUILD) om, hvornår skimmelsvamp vokser, og hvad der sker, når fugtskadet materiale tørrer.
+                  </p>
+                  <a href="/forebyg/fugt-og-indeklima/" class="card__link">
+                    Læs artikel
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Quick steps -->
+            <h2 style="font-size: var(--text-xl); font-weight: var(--font-weight-semi); margin-bottom: var(--space-6);">De vigtigste forebyggelsesråd – hurtigt overblik</h2>
+            <ol class="steps">
+              <li class="step">
+                <span class="step__number" aria-hidden="true">1</span>
+                <div class="step__content">
+                  <p class="step__title">Luft ud med gennemtræk – mindst 3 gange dagligt</p>
+                  <p class="step__description">5–10 minutters gennemtræk morgen, eftermiddag og aften. Åbn vinduer i modstående rum for bedst effekt. (Kilde: Sundhedsstyrelsen / professor Lars Gunnarsen)</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">2</span>
+                <div class="step__content">
+                  <p class="step__title">Hold alle rum opvarmet til mindst 18 °C</p>
+                  <p class="step__description">Kolde rum samler fugt. Sænk ikke temperaturen uden at øge ventilationen – det øger den relative luftfugtighed. (Kilde: Sundhedsstyrelsen)</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">3</span>
+                <div class="step__content">
+                  <p class="step__title">Hold luftfugtigheden under 60%</p>
+                  <p class="step__description">Et hygrometer hjælper dig med at holde øje. Skimmelsvamp trives over 70% relativ luftfugtighed. (Kilde: Danvak/BUILD)</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">4</span>
+                <div class="step__content">
+                  <p class="step__title">Tør ikke tøj indendørs</p>
+                  <p class="step__description">Brug tørretumbler med aftræk eller tørretumbler med kondensering i stedet. Tørring indendørs frigiver store mængder vanddamp. (Kilde: Sundhedsstyrelsen)</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">5</span>
+                <div class="step__content">
+                  <p class="step__title">Tør op efter bad og madlavning</p>
+                  <p class="step__description">Tænd emhætten under madlavning. Tør badeværelset op efter brug og hold døren lukket under badet. Luft bagefter. (Kilde: Sundhedsstyrelsen / Skimmel.dk)</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">6</span>
+                <div class="step__content">
+                  <p class="step__title">Reparer vandskader hurtigt</p>
+                  <p class="step__description">Fugt fra vandskader kan give skimmelsvamp inden for 24–48 timer. Stop fugtkilden og udtør grundigt. (Kilde: Skimmel.dk)</p>
+                </div>
+              </li>
+            </ol>
+
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="article-sidebar" aria-label="Relateret indhold">
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Artikler i denne sektion</p>
+              <nav aria-label="Forebyg-navigation">
+                <ul class="sidebar-box__nav" role="list">
+                  <li><a href="/forebyg/hvad-er-skimmelsvamp/">Hvad er skimmelsvamp?</a></li>
+                  <li><a href="/forebyg/ventilation/">Ventilation og udluftning</a></li>
+                  <li><a href="/forebyg/opvarmning-og-fugt/">Opvarmning og fugt</a></li>
+                  <li><a href="/forebyg/daglige-vaner/">Undgå fugtige aktiviteter</a></li>
+                  <li><a href="/forebyg/rengoering/">Rengøring og indeklimavaner</a></li>
+                  <li><a href="/forebyg/fugt-og-indeklima/">Fugt og indeklima</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Relaterede sektioner</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="/find/">Find skimmelsvamp</a></li>
+                <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+                <li><a href="/produkter/">Nyttigt udstyr</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Officielle kilder</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="https://www.sst.dk" target="_blank" rel="noopener noreferrer">Sundhedsstyrelsen ↗</a></li>
+                <li><a href="https://www.bolius.dk" target="_blank" rel="noopener noreferrer">Videncentret Bolius ↗</a></li>
+                <li><a href="https://www.skimmel.dk" target="_blank" rel="noopener noreferrer">Skimmel.dk ↗</a></li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+            <div class="site-logo__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="site-logo__text">
+              <span class="site-logo__name">skimmelfri.dk</span>
+              <span class="site-logo__tagline">Sundt indeklima</span>
+            </div>
+          </a>
+          <p>Uvildig, non-profit information om skimmelsvamp og indeklima for danske boligejere og lejere.</p>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Navigation</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/forebyg/">Forebyg skimmelsvamp</a></li>
+            <li><a href="/find/">Find skimmelsvamp</a></li>
+            <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+            <li><a href="/ressourcer/">Ressourcer</a></li>
+            <li><a href="/produkter/">Produkter</a></li>
+            <li><a href="/om/">Om siden</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Juridisk</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/privatlivspolitik/">Privatlivspolitik</a></li>
+            <li><a href="/privatlivspolitik/#cookies">Cookiepolitik</a></li>
+            <li><button class="site-footer__cookie-link" id="openCookieSettings" type="button">Cookie-indstillinger</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; <span id="currentYear">2026</span> skimmelfri.dk &mdash; Non-profit, uvildig information. <a href="/privatlivspolitik/">Privatlivspolitik</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-samtykke" aria-hidden="true">
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__text">
+          <p class="cookie-banner__title">Vi respekterer dit privatliv</p>
+          <p class="cookie-banner__description">Denne side bruger udelukkende teknisk nødvendige cookies. <a href="/privatlivspolitik/#cookies">Læs cookiepolitik</a>.</p>
+        </div>
+        <div class="cookie-banner__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookieSettingsBtn" type="button">Tilpas</button>
+          <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieRejectBtn" type="button">Kun nødvendige</button>
+          <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAcceptBtn" type="button">Acceptér alle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Modal -->
+  <div class="cookie-modal-overlay" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-modal">
+      <div class="cookie-modal__header">
+        <h2 class="cookie-modal__title" id="cookieModalTitle">Cookie-indstillinger</h2>
+        <button class="cookie-modal__close" id="cookieModalClose" aria-label="Luk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="cookie-modal__body">
+        <p class="cookie-modal__intro">Vælg hvilke cookies du accepterer. <a href="/privatlivspolitik/#cookies" target="_blank" rel="noopener">Læs cookiepolitik</a>.</p>
+        <div class="cookie-category">
+          <div class="cookie-category__info">
+            <p class="cookie-category__name">Nødvendige cookies <span class="cookie-category__required">Altid aktiv</span></p>
+            <p class="cookie-category__description">Teknisk nødvendige cookies til sidens grundfunktioner.</p>
+          </div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" checked disabled><span class="toggle__slider"></span></label>
+        </div>
+        <div class="cookie-category">
+          <div class="cookie-category__info">
+            <p class="cookie-category__name">Statistik</p>
+            <p class="cookie-category__description">Anonymiserede besøgsstatistikker til at forbedre siden.</p>
+          </div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" id="statsConsent" name="statsConsent"><span class="toggle__slider"></span></label>
+        </div>
+        <div class="cookie-category">
+          <div class="cookie-category__info">
+            <p class="cookie-category__name">Markedsføring</p>
+            <p class="cookie-category__description">Ikke tilgængeligt – siden er non-profit og viser ingen reklamer.</p>
+          </div>
+          <label class="toggle"><input type="checkbox" class="toggle__input" disabled><span class="toggle__slider"></span></label>
+        </div>
+      </div>
+      <div class="cookie-modal__footer">
+        <button class="cookie-modal__btn cookie-modal__btn--reject-all" id="modalRejectAll" type="button">Kun nødvendige</button>
+        <button class="cookie-modal__btn cookie-modal__btn--save" id="modalSavePrefs" type="button">Gem valg</button>
+        <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="modalAcceptAll" type="button">Acceptér alle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/cookies.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
