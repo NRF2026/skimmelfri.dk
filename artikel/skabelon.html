@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[ARTIKEL BESKRIVELSE – maks. 155 tegn]">
+  <!--
+    ARTIKEL SKABELON – skimmelfri.dk
+    =================================
+    Kopiér og tilpas denne fil til nye artikler.
+    Erstat alle [PLACEHOLDER]-værdier med det rigtige indhold.
+
+    Filnavn: Brug URL-venligt navn, fx "ventilation-og-udluftning.html"
+    Placering: Læg filen i den relevante sektionsmappe (forebyg/, find/, fjern/)
+    Opdater navigation: Tilføj link i sektionens sidebar og index.html
+  -->
+  <title>[ARTIKELTITEL] – Skimmelfri.dk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/cookies.css">
+
+  <!-- Strukturerede data (Schema.org) – tilpas til artiklen -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[ARTIKELTITEL]",
+    "description": "[ARTIKEL BESKRIVELSE]",
+    "author": {
+      "@type": "Person",
+      "name": "Morten"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Skimmelfri.dk",
+      "url": "https://skimmelfri.dk"
+    },
+    "datePublished": "[ÅÅÅÅ-MM-DD]",
+    "dateModified": "[ÅÅÅÅ-MM-DD]",
+    "inLanguage": "da"
+  }
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-to-content">Gå til indhold</a>
+
+  <!-- HEADER – sæt is-active på den relevante sektion -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+          <div class="site-logo__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="site-logo__text">
+            <span class="site-logo__name">skimmelfri.dk</span>
+            <span class="site-logo__tagline">Sundt indeklima</span>
+          </div>
+        </a>
+        <nav class="site-nav" aria-label="Primær navigation">
+          <ul class="site-nav__list" role="list">
+            <li><a href="/forebyg/" class="site-nav__link">Forebyg</a></li>
+            <li><a href="/find/" class="site-nav__link">Find skimmel</a></li>
+            <li><a href="/fjern/" class="site-nav__link">Fjern skimmel</a></li>
+            <li><a href="/ressourcer/" class="site-nav__link">Ressourcer</a></li>
+            <li><a href="/produkter/" class="site-nav__link">Produkter</a></li>
+            <li><a href="/om/" class="site-nav__link">Om siden</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__actions">
+          <button class="btn-search" id="searchToggle" aria-label="Åbn søgning" aria-expanded="false" aria-controls="searchOverlay">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="btn-menu" id="menuToggle" aria-label="Åbn menu" aria-expanded="false" aria-controls="mobileNav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigation" aria-hidden="true">
+      <ul class="mobile-nav__list" role="list">
+        <li><a href="/forebyg/" class="mobile-nav__link">Forebyg skimmelsvamp</a></li>
+        <li><a href="/find/" class="mobile-nav__link">Find skimmelsvamp</a></li>
+        <li><a href="/fjern/" class="mobile-nav__link">Fjern skimmelsvamp</a></li>
+        <li><a href="/ressourcer/" class="mobile-nav__link">Ressourcer</a></li>
+        <li><a href="/produkter/" class="mobile-nav__link">Produkter</a></li>
+        <li><a href="/om/" class="mobile-nav__link">Om siden</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Søgning" aria-hidden="true">
+    <div class="search-box">
+      <div class="search-box__input-wrap">
+        <span class="search-box__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <input type="search" class="search-box__input" id="searchInput" placeholder="Søg på skimmelfri.dk…" autocomplete="off" aria-label="Søg på siden">
+        <button class="search-box__close" id="searchClose" aria-label="Luk søgning">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="search-box__results" id="searchResults" role="region" aria-live="polite">
+        <p class="search-box__hint">Skriv for at søge efter artikler og emner</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- BRØDKRUMME – tilpas stien -->
+    <div class="container" style="padding-top: var(--space-2);">
+      <ol class="breadcrumb" aria-label="Brødkrumme">
+        <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Forside</a></li>
+        <li class="breadcrumb__item"><a href="/[SEKTION]/" class="breadcrumb__link">[SEKTIONSNAVN]</a></li>
+        <li class="breadcrumb__item"><span class="breadcrumb__current">[ARTIKELTITEL]</span></li>
+      </ol>
+    </div>
+
+    <!-- ARTIKEL HERO -->
+    <section class="page-hero" aria-labelledby="articleTitle">
+      <div class="container">
+        <p class="page-hero__label" aria-hidden="true">[SEKTION LABEL]</p>
+        <h1 class="page-hero__title" id="articleTitle">[ARTIKELTITEL]</h1>
+        <p class="page-hero__description">[KORT BESKRIVELSE – 1–2 sætninger]</p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-4);">
+          Sidst opdateret: <time datetime="[ÅÅÅÅ-MM-DD]">[DATO]</time>
+          &mdash; Kilde: [PRIMÆR KILDE]
+        </p>
+      </div>
+    </section>
+
+    <!-- ARTIKEL INDHOLD -->
+    <section class="section">
+      <div class="container">
+        <div class="article-layout">
+
+          <article>
+
+            <!-- Introduktions-callout (valgfri) -->
+            <div class="callout callout--tip" style="margin-bottom: var(--space-8);">
+              <span class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <div class="callout__content">
+                <p class="callout__title">[CALLOUT TITEL]</p>
+                <p>[CALLOUT TEKST – kort nøglepunkt]</p>
+              </div>
+            </div>
+
+            <!-- Løbende tekst -->
+            <div class="prose">
+
+              <h2>[AFSNIT 1 OVERSKRIFT]</h2>
+              <p>[Indhold. Hold afsnit korte – maks. 4–5 linjer.]</p>
+              <ul>
+                <li>[Punkt 1]</li>
+                <li>[Punkt 2]</li>
+                <li>[Punkt 3]</li>
+              </ul>
+
+              <!-- Kildehenvisning – brug til alle faktudsagn -->
+              <div class="source-citation">
+                <span class="source-citation__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                </span>
+                <p>Kilde: <a href="[KILDE URL]" target="_blank" rel="noopener noreferrer">[KILDENAVN]</a> – [HVAD KILDEN SIGER].</p>
+              </div>
+
+              <h2>[AFSNIT 2 OVERSKRIFT]</h2>
+              <p>[Indhold]</p>
+
+              <h2>[AFSNIT 3 OVERSKRIFT]</h2>
+              <p>[Indhold]</p>
+
+            </div>
+
+            <!-- Trin-for-trin (hvis relevant) -->
+            <h2 style="font-size: var(--text-xl); font-weight: var(--font-weight-semi); margin: var(--space-8) 0 var(--space-5);">[TRIN SEKTION TITEL]</h2>
+            <ol class="steps">
+              <li class="step">
+                <span class="step__number" aria-hidden="true">1</span>
+                <div class="step__content">
+                  <p class="step__title">[TRIN 1 TITEL]</p>
+                  <p class="step__description">[TRIN 1 BESKRIVELSE]</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step__number" aria-hidden="true">2</span>
+                <div class="step__content">
+                  <p class="step__title">[TRIN 2 TITEL]</p>
+                  <p class="step__description">[TRIN 2 BESKRIVELSE]</p>
+                </div>
+              </li>
+            </ol>
+
+            <!-- Advarsel callout -->
+            <div class="callout callout--warning" style="margin-top: var(--space-8);">
+              <span class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <div class="callout__content">
+                <p class="callout__title">[ADVARSEL TITEL]</p>
+                <p>[ADVARSEL TEKST]</p>
+              </div>
+            </div>
+
+            <!-- Emne-tags -->
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-10);">
+              <a href="/[SEKTION]/" class="tag">[TAG 1]</a>
+              <a href="/[SEKTION]/" class="tag">[TAG 2]</a>
+            </div>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="article-sidebar" aria-label="Relateret indhold">
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Indhold</p>
+              <nav aria-label="Artikelindhold">
+                <ul class="sidebar-box__nav" role="list">
+                  <li><a href="#afsnit-1">[AFSNIT 1]</a></li>
+                  <li><a href="#afsnit-2">[AFSNIT 2]</a></li>
+                  <li><a href="#afsnit-3">[AFSNIT 3]</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Mere i denne sektion</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="/[SEKTION]/artikel-1/">[ARTIKEL 1]</a></li>
+                <li><a href="/[SEKTION]/artikel-2/">[ARTIKEL 2]</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box">
+              <p class="sidebar-box__title">Kilder</p>
+              <ul class="sidebar-box__nav" role="list">
+                <li><a href="[URL]" target="_blank" rel="noopener noreferrer">[KILDENAVN] ↗</a></li>
+              </ul>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="/" class="site-logo" aria-label="Skimmelfri.dk – forside">
+            <div class="site-logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <div class="site-logo__text"><span class="site-logo__name">skimmelfri.dk</span><span class="site-logo__tagline">Sundt indeklima</span></div>
+          </a>
+          <p>Uvildig, non-profit information om skimmelsvamp og indeklima for danske boligejere og lejere.</p>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Navigation</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/forebyg/">Forebyg skimmelsvamp</a></li>
+            <li><a href="/find/">Find skimmelsvamp</a></li>
+            <li><a href="/fjern/">Fjern skimmelsvamp</a></li>
+            <li><a href="/ressourcer/">Ressourcer</a></li>
+            <li><a href="/produkter/">Produkter</a></li>
+            <li><a href="/om/">Om siden</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Juridisk</h3>
+          <ul class="site-footer__nav" role="list">
+            <li><a href="/privatlivspolitik/">Privatlivspolitik</a></li>
+            <li><a href="/privatlivspolitik/#cookies">Cookiepolitik</a></li>
+            <li><button class="site-footer__cookie-link" id="openCookieSettings" type="button">Cookie-indstillinger</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; <span id="currentYear">2026</span> skimmelfri.dk &mdash; <a href="/privatlivspolitik/">Privatlivspolitik</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-samtykke" aria-hidden="true">
+    <div class="container"><div class="cookie-banner__inner">
+      <div class="cookie-banner__text"><p class="cookie-banner__title">Vi respekterer dit privatliv</p><p class="cookie-banner__description">Denne side bruger udelukkende teknisk nødvendige cookies. <a href="/privatlivspolitik/#cookies">Læs cookiepolitik</a>.</p></div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__btn cookie-banner__btn--settings" id="cookieSettingsBtn" type="button">Tilpas</button>
+        <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieRejectBtn" type="button">Kun nødvendige</button>
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAcceptBtn" type="button">Acceptér alle</button>
+      </div>
+    </div></div>
+  </div>
+  <div class="cookie-modal-overlay" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-modal">
+      <div class="cookie-modal__header"><h2 class="cookie-modal__title" id="cookieModalTitle">Cookie-indstillinger</h2><button class="cookie-modal__close" id="cookieModalClose" aria-label="Luk"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="cookie-modal__body">
+        <p class="cookie-modal__intro">Vælg hvilke cookies du accepterer. <a href="/privatlivspolitik/#cookies" target="_blank" rel="noopener">Læs cookiepolitik</a>.</p>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Nødvendige cookies <span class="cookie-category__required">Altid aktiv</span></p><p class="cookie-category__description">Teknisk nødvendige cookies.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" checked disabled><span class="toggle__slider"></span></label></div>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Statistik</p><p class="cookie-category__description">Anonymiserede besøgsstatistikker.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" id="statsConsent" name="statsConsent"><span class="toggle__slider"></span></label></div>
+        <div class="cookie-category"><div class="cookie-category__info"><p class="cookie-category__name">Markedsføring</p><p class="cookie-category__description">Ikke tilgængeligt – non-profit side.</p></div><label class="toggle"><input type="checkbox" class="toggle__input" disabled><span class="toggle__slider"></span></label></div>
+      </div>
+      <div class="cookie-modal__footer">
+        <button class="cookie-modal__btn cookie-modal__btn--reject-all" id="modalRejectAll" type="button">Kun nødvendige</button>
+        <button class="cookie-modal__btn cookie-modal__btn--save" id="modalSavePrefs" type="button">Gem valg</button>
+        <button class="cookie-modal__btn cookie-modal__btn--accept-all" id="modalAcceptAll" type="button">Acceptér alle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/cookies.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
