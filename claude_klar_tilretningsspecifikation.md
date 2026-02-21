@@ -5,7 +5,7 @@
 **Vigtigst (må ikke brydes):**
 - Siden må **ikke** beskrive sig som “non‑profit” eller “ikke‑kommerciel”. Den må kun beskrive sig som en side, der **samler og formidler** viden og råd fra pålidelige kilder.
 - Teksten må **ikke** give personlig medicinsk/juridisk rådgivning. Brug neutralt sprog: “kan”, “typisk”, “ofte”, “overvej”, “søg professionel hjælp”.
-- “Om siden”: Forfatteren er en familiefar ved navn **Nils**, med **tre børn**, der har haft en **generel bekymring** for dårligt indeklima og skimmelsvamp (ingen påstand om konkrete egne skimmelsager).
+- “Om siden” skal omdøbes til "Om skimmelinfo.dk" og indholdet skal tilrettes efter følgende oplysninger: Forfatteren er en familiefar ved navn **Nils**, med **tre børn**, der har haft en **generel bekymring** for dårligt indeklima og skimmelsvamp (ingen påstand om konkrete egne skimmelsager, men fokus på overordnet fokus på at sikre et godt indeklima og et hjem, det ikke er potentielt sundhedsskadeligt at opholde sig i).
 - Ingen affiliate‑links, ingen brand‑anbefalinger, ingen absolutte løfter.
 
 ---
@@ -15,7 +15,7 @@
 2. Opret manglende undersider og fyld dem med indhold iht. kravene herunder.
 3. Opdatér navigation, kort, interne links og “relaterede artikler”, så alt peger korrekt.
 4. Forbedr design (CSS) med få, sikre greb (hero‑billede, kort, infobokse).
-5. Tilføj billeder (rettighedsfrie eller AI‑genererede) med alt‑tekster.
+5. Tilføj billeder på relevante undersider (rettighedsfrie eller AI‑genererede) med alt‑tekster.
 6. Kør lokal link‑check (simpel script eller manuel) og ret døde interne links.
 
 ---
