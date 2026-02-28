@@ -130,26 +130,26 @@
   // Search index – populate as articles are added
   // -------------------------------------------------------
   var SEARCH_INDEX = [
-    { title: 'Forebyg skimmelsvamp',        url: '/skimmelfri.dk/forebyg/',        keywords: 'forebyg forebyggelse ventilation udluftning fugt temperatur' },
-    { title: 'Find skimmelsvamp',            url: '/skimmelfri.dk/find/',           keywords: 'find opdage tegn symptomer test testmetoder luftmåling' },
-    { title: 'Fjern skimmelsvamp',           url: '/skimmelfri.dk/fjern/',          keywords: 'fjern bekæmp fjernelse rengøring sanering professionel' },
-    { title: 'Ressourcer',                   url: '/skimmelfri.dk/ressourcer/',     keywords: 'ressourcer kilder links sundhedsstyrelsen bolius skimmel cisbo' },
-    { title: 'Produkter og udstyr',          url: '/skimmelfri.dk/produkter/',      keywords: 'produkter hygrometer affugter ventilation hepa støvsuger' },
-    { title: 'Om siden',                     url: '/skimmelfri.dk/om/',             keywords: 'om side forfatter morten non-profit uvildig' },
-    { title: 'Privatlivspolitik',            url: '/skimmelfri.dk/privatlivspolitik/', keywords: 'privatliv gdpr cookies data politik' },
-    { title: 'Ventilation og udluftning',    url: '/skimmelfri.dk/forebyg/ventilation/', keywords: 'ventilation udluftning gennemtræk vindue luftudskiftning sundhedsstyrelsen' },
-    { title: 'Opvarmning og fugt',           url: '/skimmelfri.dk/forebyg/opvarmning-og-fugt/', keywords: 'temperatur opvarmning fugt 18 grader luftfugtighed' },
-    { title: 'Daglige vaner',                url: '/skimmelfri.dk/forebyg/daglige-vaner/', keywords: 'tøj tørre bad køkken emhætte vaner daglig' },
-    { title: 'Rengøring og indeklimavaner',  url: '/skimmelfri.dk/forebyg/rengoering/', keywords: 'rengøring støvsugning hepa miljøvenlig ugentlig' },
-    { title: 'Hvad er skimmelsvamp?',        url: '/skimmelfri.dk/forebyg/hvad-er-skimmelsvamp/', keywords: 'hvad er skimmelsvamp svamp organismer sundhed' },
-    { title: 'Tegn på skimmelsvamp',         url: '/skimmelfri.dk/find/tegn/',      keywords: 'tegn muglugt pletter kondens misfarvning fugt' },
-    { title: 'Helbredssymptomer',            url: '/skimmelfri.dk/find/helbredssymptomer/', keywords: 'helbred symptomer astma allergi luftveje hovedpine' },
-    { title: 'Testmetoder',                  url: '/skimmelfri.dk/find/testmetoder/', keywords: 'test testmetoder aftryksplader mycometer dna luftmåling laboratorium' },
-    { title: 'Skjult skimmelsvamp',          url: '/skimmelfri.dk/find/skjult-skimmel/', keywords: 'skjult skimmel gulv loft isolering vægge bag' },
-    { title: 'Hvornår skal du reagere?',     url: '/skimmelfri.dk/fjern/hvornaar-reagere/', keywords: 'reagere hvornår størrelse 20 cm professionel' },
-    { title: 'Fjern mindre angreb selv',     url: '/skimmelfri.dk/fjern/mindre-angreb/', keywords: 'fjern lille angreb selv rengøring vask skrub' },
-    { title: 'Større angreb og sanering',    url: '/skimmelfri.dk/fjern/stoerre-angreb/', keywords: 'større angreb sanering professionel støvskillevæg afrensning' },
-    { title: 'Forsikring og hjælp',          url: '/skimmelfri.dk/fjern/forsikring/', keywords: 'forsikring hjælp vandskade ejerskifteforsikring' }
+    { title: 'Forebyg skimmelsvamp',        url: '/forebyg/',        keywords: 'forebyg forebyggelse ventilation udluftning fugt temperatur' },
+    { title: 'Find skimmelsvamp',            url: '/find/',           keywords: 'find opdage tegn symptomer test testmetoder luftmåling' },
+    { title: 'Fjern skimmelsvamp',           url: '/fjern/',          keywords: 'fjern bekæmp fjernelse rengøring sanering professionel' },
+    { title: 'Ressourcer',                   url: '/ressourcer/',     keywords: 'ressourcer kilder links sundhedsstyrelsen bolius skimmel cisbo' },
+    { title: 'Produkter og udstyr',          url: '/produkter/',      keywords: 'produkter hygrometer affugter ventilation hepa støvsuger' },
+    { title: 'Om siden',                     url: '/om/',             keywords: 'om side forfatter morten non-profit uvildig' },
+    { title: 'Privatlivspolitik',            url: '/privatlivspolitik/', keywords: 'privatliv gdpr cookies data politik' },
+    { title: 'Ventilation og udluftning',    url: '/forebyg/ventilation/', keywords: 'ventilation udluftning gennemtræk vindue luftudskiftning sundhedsstyrelsen' },
+    { title: 'Opvarmning og fugt',           url: '/forebyg/opvarmning-og-fugt/', keywords: 'temperatur opvarmning fugt 18 grader luftfugtighed' },
+    { title: 'Daglige vaner',                url: '/forebyg/daglige-vaner/', keywords: 'tøj tørre bad køkken emhætte vaner daglig' },
+    { title: 'Rengøring og indeklimavaner',  url: '/forebyg/rengoering/', keywords: 'rengøring støvsugning hepa miljøvenlig ugentlig' },
+    { title: 'Hvad er skimmelsvamp?',        url: '/forebyg/hvad-er-skimmelsvamp/', keywords: 'hvad er skimmelsvamp svamp organismer sundhed' },
+    { title: 'Tegn på skimmelsvamp',         url: '/find/tegn/',      keywords: 'tegn muglugt pletter kondens misfarvning fugt' },
+    { title: 'Helbredssymptomer',            url: '/find/helbredssymptomer/', keywords: 'helbred symptomer astma allergi luftveje hovedpine' },
+    { title: 'Testmetoder',                  url: '/find/testmetoder/', keywords: 'test testmetoder aftryksplader mycometer dna luftmåling laboratorium' },
+    { title: 'Skjult skimmelsvamp',          url: '/find/skjult-skimmel/', keywords: 'skjult skimmel gulv loft isolering vægge bag' },
+    { title: 'Hvornår skal du reagere?',     url: '/fjern/hvornaar-reagere/', keywords: 'reagere hvornår størrelse 20 cm professionel' },
+    { title: 'Fjern mindre angreb selv',     url: '/fjern/mindre-angreb/', keywords: 'fjern lille angreb selv rengøring vask skrub' },
+    { title: 'Større angreb og sanering',    url: '/fjern/stoerre-angreb/', keywords: 'større angreb sanering professionel støvskillevæg afrensning' },
+    { title: 'Forsikring og hjælp',          url: '/fjern/forsikring/', keywords: 'forsikring hjælp vandskade ejerskifteforsikring' }
   ];
 
   function runSearch(query) {
