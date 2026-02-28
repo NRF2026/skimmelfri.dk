@@ -1,5 +1,5 @@
 /**
- * skimmelfri.dk – GDPR Cookie Consent
+ * skimmelinfo.dk – GDPR Cookie Consent
  * =====================================
  * Compliant with:
  *  - EU GDPR (Regulation 2016/679)
@@ -12,15 +12,16 @@
  *  - Equal prominence of Accept / Reject options
  *  - Consent is freely given, specific, informed and unambiguous
  *  - Easy withdrawal – available from footer at all times
- *  - Consent stored locally (localStorage) – no server-side logging
- *  - Marketing category disabled entirely (non-profit site)
+ *  - Consent stored as browser cookie (sk_consent, 12 months)
+ *  - Marketing category disabled entirely (non-commercial site)
  */
 
 (function () {
   'use strict';
 
   var CONSENT_KEY     = 'sk_consent';
-  var CONSENT_VERSION = '1';
+  var CONSENT_VERSION = '2';
+  var CONSENT_DAYS    = 365;
 
   // -------------------------------------------------------
   // Consent state
@@ -34,33 +35,7 @@
   };
 
   // -------------------------------------------------------
-  // Persistence helpers
-  // -------------------------------------------------------
-  function loadConsent() {
-    try {
-      var raw = localStorage.getItem(CONSENT_KEY);
-      if (!raw) return null;
-      var parsed = JSON.parse(raw);
-      // Invalidate if version changed
-      if (!parsed || parsed.version !== CONSENT_VERSION) return null;
-      return parsed;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function saveConsent(consentObj) {
-    try {
-      consentObj.version   = CONSENT_VERSION;
-      consentObj.timestamp = new Date().toISOString();
-      localStorage.setItem(CONSENT_KEY, JSON.stringify(consentObj));
-    } catch (e) {
-      // localStorage unavailable – degrade gracefully
-    }
-  }
-
-  // -------------------------------------------------------
-  // Cookie helpers (for actual cookie setting if needed)
+  // Cookie helpers
   // -------------------------------------------------------
   function setCookie(name, value, days) {
     var expires = '';
@@ -73,8 +48,72 @@
       expires + '; path=/; SameSite=Lax; Secure';
   }
 
+  function getCookie(name) {
+    var search = name + '=';
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var c = cookies[i].trim();
+      if (c.indexOf(search) === 0) {
+        return decodeURIComponent(c.substring(search.length));
+      }
+    }
+    return null;
+  }
+
   function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax';
+  }
+
+  // -------------------------------------------------------
+  // Persistence helpers
+  // -------------------------------------------------------
+  function loadConsent() {
+    // Try browser cookie (current format)
+    try {
+      var raw = getCookie(CONSENT_KEY);
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        if (parsed && parsed.version === CONSENT_VERSION) {
+          return parsed;
+        }
+        // Outdated version – delete and re-ask
+        deleteCookie(CONSENT_KEY);
+        return null;
+      }
+    } catch (e) {
+      deleteCookie(CONSENT_KEY);
+    }
+
+    // Migrate from localStorage (used in v1 – can be removed after 12 months)
+    try {
+      var lsRaw = localStorage.getItem(CONSENT_KEY);
+      if (lsRaw) {
+        var lsParsed = JSON.parse(lsRaw);
+        localStorage.removeItem(CONSENT_KEY);
+        if (lsParsed && (lsParsed.version === '1' || lsParsed.version === CONSENT_VERSION)) {
+          // Migrate to cookie
+          var migrated = {
+            necessary:  true,
+            statistics: !!lsParsed.statistics,
+            marketing:  false
+          };
+          saveConsent(migrated);
+          return migrated;
+        }
+      }
+    } catch (e) { /* ignore */ }
+
+    return null;
+  }
+
+  function saveConsent(consentObj) {
+    consentObj.version   = CONSENT_VERSION;
+    consentObj.timestamp = new Date().toISOString();
+    try {
+      setCookie(CONSENT_KEY, JSON.stringify(consentObj), CONSENT_DAYS);
+    } catch (e) {
+      // Cookie setting failed – degrade gracefully
+    }
   }
 
   // -------------------------------------------------------
@@ -88,15 +127,12 @@
     // if (typeof window._plausible === 'undefined') {
     //   var s = document.createElement('script');
     //   s.defer = true;
-    //   s.dataset.domain = 'skimmelfri.dk';
+    //   s.dataset.domain = 'skimmelinfo.dk';
     //   s.src = 'https://plausible.io/js/script.js';
     //   document.head.appendChild(s);
     // }
     //
     // Currently a no-op until analytics are configured.
-    if (window.console && window.console.log) {
-      // console.log('[CookieConsent] Statistics activated');
-    }
   }
 
   function deactivateStatistics() {
@@ -135,7 +171,6 @@
     var banner = document.getElementById('cookieBanner');
     if (!banner) return;
     banner.setAttribute('aria-hidden', 'false');
-    // Use rAF so the CSS transition plays
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         banner.classList.add('is-visible');
@@ -148,7 +183,6 @@
     if (!banner) return;
     banner.classList.remove('is-visible');
     banner.setAttribute('aria-hidden', 'true');
-    // Remove from tab order after transition
     setTimeout(function () {
       if (!banner.classList.contains('is-visible')) {
         banner.style.display = 'none';
@@ -163,7 +197,6 @@
     var overlay = document.getElementById('cookieModal');
     if (!overlay) return;
 
-    // Sync toggle state before opening
     var statsToggle = document.getElementById('statsConsent');
     if (statsToggle) {
       statsToggle.checked = state.statistics;
@@ -176,13 +209,11 @@
       });
     });
 
-    // Focus management
     var firstFocusable = overlay.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
     if (firstFocusable) {
       setTimeout(function () { firstFocusable.focus(); }, 50);
     }
 
-    // Trap focus within modal
     overlay.addEventListener('keydown', trapFocus);
   }
 
@@ -251,7 +282,6 @@
   // Wire up DOM event listeners
   // -------------------------------------------------------
   function bindEvents() {
-    // Banner buttons
     var acceptBtn   = document.getElementById('cookieAcceptBtn');
     var rejectBtn   = document.getElementById('cookieRejectBtn');
     var settingsBtn = document.getElementById('cookieSettingsBtn');
@@ -263,7 +293,6 @@
       hideBanner();
     });
 
-    // Modal buttons
     var modalAcceptAll = document.getElementById('modalAcceptAll');
     var modalRejectAll = document.getElementById('modalRejectAll');
     var modalSavePrefs = document.getElementById('modalSavePrefs');
@@ -274,7 +303,6 @@
     if (modalSavePrefs) modalSavePrefs.addEventListener('click', savePreferences);
     if (modalClose)     modalClose.addEventListener('click', closeModal);
 
-    // Close modal on overlay click (outside modal box)
     var overlay = document.getElementById('cookieModal');
     if (overlay) {
       overlay.addEventListener('click', function (e) {
@@ -282,12 +310,10 @@
       });
     }
 
-    // Close modal on Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeModal();
     });
 
-    // Footer "Cookie-indstillinger" button (may appear on every page)
     var footerSettingsBtn = document.getElementById('openCookieSettings');
     if (footerSettingsBtn) {
       footerSettingsBtn.addEventListener('click', function () {
@@ -303,10 +329,8 @@
     var saved = loadConsent();
 
     if (saved) {
-      // Returning visitor – apply saved preferences silently
       applyConsent(saved);
     } else {
-      // First visit – show banner (no cookies set until action taken)
       showBanner();
     }
 
@@ -326,7 +350,6 @@
     hasConsented:    function (category) { return !!state[category]; }
   };
 
-  // Run on DOMContentLoaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
