@@ -28,7 +28,6 @@
   // -------------------------------------------------------
   var state = {
     necessary: true,   // always true – cannot be toggled
-    statistics: false,
     marketing: false,  // always false – disabled on this site
     version: CONSENT_VERSION,
     timestamp: null
@@ -117,48 +116,33 @@
   }
 
   // -------------------------------------------------------
-  // Statistics activation (placeholder – replace with your
-  // actual analytics loader when statistics are enabled)
+  // Plausible Analytics – loaded for all visitors.
+  // Plausible sets no cookies and processes no personal data,
+  // so no consent is required. It is disclosed in the privacy policy.
   // -------------------------------------------------------
-  function activateStatistics() {
-    // Example: load Plausible (privacy-friendly, no personal data)
-    // Only called AFTER the user has given explicit consent.
-    //
-    // if (typeof window._plausible === 'undefined') {
-    //   var s = document.createElement('script');
-    //   s.defer = true;
-    //   s.dataset.domain = 'skimmelinfo.dk';
-    //   s.src = 'https://plausible.io/js/script.js';
-    //   document.head.appendChild(s);
-    // }
-    //
-    // Currently a no-op until analytics are configured.
-  }
+  function loadPlausible() {
+    if (typeof window.plausible !== 'undefined') return; // already loaded
 
-  function deactivateStatistics() {
-    // Remove any statistics cookies if previously set
-    deleteCookie('_plausible');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://plausible.io/js/pa-U6QFwBVSv_M5_wkZR-WD1.js';
+    document.head.appendChild(s);
+
+    window.plausible = window.plausible || function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+    window.plausible.init = window.plausible.init || function (i) {
+      window.plausible.o = i || {};
+    };
+    window.plausible.init();
   }
 
   // -------------------------------------------------------
   // Apply consent state to the page
   // -------------------------------------------------------
   function applyConsent(consentObj) {
-    state.necessary  = true;
-    state.statistics = !!consentObj.statistics;
-    state.marketing  = false;
-
-    if (state.statistics) {
-      activateStatistics();
-    } else {
-      deactivateStatistics();
-    }
-
-    // Sync the toggle in the modal if it exists
-    var statsToggle = document.getElementById('statsConsent');
-    if (statsToggle) {
-      statsToggle.checked = state.statistics;
-    }
+    state.necessary = true;
+    state.marketing = false;
 
     // Dispatch custom event so other scripts can react
     document.dispatchEvent(new CustomEvent('consentUpdated', { detail: state }));
@@ -250,7 +234,7 @@
   // Consent actions
   // -------------------------------------------------------
   function acceptAll() {
-    var c = { necessary: true, statistics: true, marketing: false };
+    var c = { necessary: true, marketing: false };
     saveConsent(c);
     applyConsent(c);
     hideBanner();
@@ -258,7 +242,7 @@
   }
 
   function rejectAll() {
-    var c = { necessary: true, statistics: false, marketing: false };
+    var c = { necessary: true, marketing: false };
     saveConsent(c);
     applyConsent(c);
     hideBanner();
@@ -266,12 +250,7 @@
   }
 
   function savePreferences() {
-    var statsToggle = document.getElementById('statsConsent');
-    var c = {
-      necessary:  true,
-      statistics: statsToggle ? statsToggle.checked : false,
-      marketing:  false
-    };
+    var c = { necessary: true, marketing: false };
     saveConsent(c);
     applyConsent(c);
     hideBanner();
@@ -326,6 +305,9 @@
   // Initialisation
   // -------------------------------------------------------
   function init() {
+    // Load Plausible for all visitors – no cookies, no personal data.
+    loadPlausible();
+
     var saved = loadConsent();
 
     if (saved) {
