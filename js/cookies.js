@@ -121,18 +121,22 @@
   // actual analytics loader when statistics are enabled)
   // -------------------------------------------------------
   function activateStatistics() {
-    // Example: load Plausible (privacy-friendly, no personal data)
-    // Only called AFTER the user has given explicit consent.
-    //
-    // if (typeof window._plausible === 'undefined') {
-    //   var s = document.createElement('script');
-    //   s.defer = true;
-    //   s.dataset.domain = 'skimmelinfo.dk';
-    //   s.src = 'https://plausible.io/js/script.js';
-    //   document.head.appendChild(s);
-    // }
-    //
-    // Currently a no-op until analytics are configured.
+    // Plausible Analytics – privacy-friendly, no personal data, no cookies.
+    // Only called AFTER the user has given explicit consent for statistics.
+    if (typeof window.plausible !== 'undefined') return; // already loaded
+
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://plausible.io/js/pa-U6QFwBVSv_M5_wkZR-WD1.js';
+    document.head.appendChild(s);
+
+    window.plausible = window.plausible || function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+    window.plausible.init = window.plausible.init || function (i) {
+      window.plausible.o = i || {};
+    };
+    window.plausible.init();
   }
 
   function deactivateStatistics() {
